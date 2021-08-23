@@ -7,9 +7,9 @@ const Addbook = () => (
       <input type="text" name="book-name" required placeholder="Book Title" />
       <select name="category">
         <option value="Action">Action</option>
-        <option value="Horror">Horror</option>
+        <option value="Horror">Economy</option>
         <option value="Comedy">Comedy</option>
-        <option value="Magic">Magic</option>
+        <option value="Magic">Science Fiction</option>
       </select>
       <button type="button">ADD BOOK</button>
     </div>
