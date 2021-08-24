@@ -33,7 +33,7 @@ const books = [
 const Page = () => (
   <div className="books-container">
     {books.map((element) => (
-      <div className="bookcard" key="element">
+      <div className="bookcard" key="element.title">
         <div className="book-left">
           <h4 className="book_genre">{element.category}</h4>
           <h3 className="title">{element.title}</h3>
