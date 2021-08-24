@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 function Page() {
   const { booksReducer } = useSelector((state) => state);
   const { books } = booksReducer;
   const [booksDisplay, setBooksDisplay] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (books !== booksDisplay) {
@@ -25,7 +27,7 @@ function Page() {
                 <button type="button" className="btn-special">
                   Comments
                 </button>
-                <button type="button" className="btn-special">
+                <button type="button" onClick={() => dispatch(removeBook(element.id))} className="btn-special">
                   Remove
                 </button>
                 <button type="button" className="btn-special">

@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
@@ -20,6 +21,12 @@ const reducer = (state = initialState, action) => {
     { const books = [...state.books, action.payload];
       return { ...state, books }; }
     case REMOVE_BOOK:
+      const { books } = state;
+      let newBooks = [];
+      newBooks = books.filter((book) => book.id !== action.payload);
+      return {
+        books: [...newBooks]
+      }
     default:
       return state;
   }
