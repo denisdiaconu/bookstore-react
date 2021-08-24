@@ -10,7 +10,6 @@ function Addbook() {
   const [category, setCategory] = useState('Action');
 
   const submitBookToStore = () => {
-    console.log('working');
     const newBook = {
       id: uuidv4(),
       title,
