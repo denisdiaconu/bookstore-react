@@ -20,7 +20,7 @@ function Page() {
             <div className="book-left">
               <h4 className="book_genre">{element.category}</h4>
               <h3 className="title">{element.title}</h3>
-              <h6 className="author">testing</h6>
+              <h6 className="author">{element.author}</h6>
               <div className="actions">
                 <button type="button" className="btn-special">
                   Comments
