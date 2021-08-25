@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBook } from '../redux/api/api';
 
 function Page() {
   const { booksReducer } = useSelector((state) => state);
@@ -27,7 +27,7 @@ function Page() {
                 <button type="button" className="btn-special">
                   Comments
                 </button>
-                <button type="button" onClick={() => dispatch(removeBook(element.id))} className="btn-special">
+                <button type="button" onClick={() => dispatch(removeBook(element.item_id))} className="btn-special">
                   Remove
                 </button>
                 <button type="button" className="btn-special">

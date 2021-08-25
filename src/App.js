@@ -4,6 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Books from './components/Books';
 import Categories from './components/Categories';
+import store from './redux/cofigureStore';
+import { getBooks } from './redux/api/api';
+
+store.dispatch(getBooks());
 
 function App() {
   return (
