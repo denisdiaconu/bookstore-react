@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../redux/api/api';
+import './style/page.css';
 
 function Page() {
   const { booksReducer } = useSelector((state) => state);
@@ -27,7 +28,7 @@ function Page() {
                 <button type="button" className="btn-special">
                   Comments
                 </button>
-                <button type="button" onClick={() => dispatch(removeBook(element.item_id))} className="btn-special">
+                <button type="button" onClick={() => dispatch(removeBook(element.item_id))} className="btn-special-middle">
                   Remove
                 </button>
                 <button type="button" className="btn-special">
@@ -36,18 +37,22 @@ function Page() {
               </div>
             </div>
             <div className="book-center">
-              <img src="./" alt="progress" className="progress" />
-              <div className="data">
-                <h3>0</h3>
-                <h6>Completed</h6>
+              <div>
+                <div src="./" alt="progress" className="progress" />
+                <div className="data">
+                  <h3>0%</h3>
+                  <h6>Completed</h6>
+                </div>
               </div>
             </div>
             <div className="book-right">
               <div>
-                <h3>Current chapter</h3>
-                <h3>0</h3>
+                <div>
+                  <h3>Current chapter</h3>
+                  <h4>Chapter 0</h4>
+                </div>
+                <button type="button">Update Progress</button>
               </div>
-              <button type="button">Update Progress</button>
             </div>
           </div>
         ))}

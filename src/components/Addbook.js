@@ -2,18 +2,17 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/api/api';
+import './style/addbook.css';
 
 function Addbook() {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('Action');
 
   const submitBookToStore = () => {
     const newBook = {
       item_id: uuidv4(),
       title,
-      author,
       category,
     };
 
@@ -21,11 +20,10 @@ function Addbook() {
     dispatch(addBook(newBook));
   };
   return (
-    <div>
+    <div className="submit">
       <h3>ADD NEW BOOK</h3>
       <div className="addbook">
         <input type="text" name="book-name" onChange={(e) => setTitle(e.target.value)} required placeholder="Book Title" />
-        <input type="text" name="book-author" onChange={(e) => setAuthor(e.target.value)} required placeholder="Book Author" />
         <select name="category" onChange={(e) => setCategory(e.target.value)}>
           <option value="Action">Action</option>
           <option value="Economy">Economy</option>
