@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../redux/api/api';
+import './style/page.css';
 
 function Page() {
   const { booksReducer } = useSelector((state) => state);
@@ -36,7 +37,7 @@ function Page() {
               </div>
             </div>
             <div className="book-center">
-              <img src="./" alt="progress" className="progress" />
+              <div src="./" alt="progress" className="progress" />
               <div className="data">
                 <h3>0</h3>
                 <h6>Completed</h6>
